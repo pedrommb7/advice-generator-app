@@ -1,0 +1,12 @@
+@use '../tools/mixins' as *;
+
+$props-direction: (
+  ('row', 'row'),
+  ('row-reverse', 'row-reverse'),
+  ('column', 'column'),
+  ('column-reverse', 'column-reverse')
+);
+
+.flex {
+  @include setProp('flex-direction', $props-direction);
+}

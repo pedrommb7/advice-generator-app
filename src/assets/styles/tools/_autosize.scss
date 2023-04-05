@@ -1,0 +1,12 @@
+@mixin autosize($height: 'auto', $width: 'auto') {
+  @if ($height == 'auto' and $width == 'auto') {
+    @error "You need to pass at least 1 parameter to this mixin.";
+  }
+
+  @if ($height != 'auto' and $width != 'auto') {
+    @error "You can't pass value to both parameters";
+  }
+
+  height: #{$height};
+  width: #{$width};
+}

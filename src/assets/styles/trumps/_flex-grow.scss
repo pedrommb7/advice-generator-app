@@ -1,0 +1,12 @@
+.flex {
+  &__grow {
+    &,
+    &--equal > * {
+      flex: 1;
+    }
+
+    &--auto > * {
+      flex: auto;
+    }
+  }
+}

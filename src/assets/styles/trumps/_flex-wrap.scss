@@ -1,0 +1,7 @@
+@use '../tools/mixins' as *;
+
+$props-wrap: (('wrap', 'wrap'), ('no-wrap', 'no-wrap'));
+
+.flex {
+  @include setProp('flex-wrap', $props-wrap);
+}

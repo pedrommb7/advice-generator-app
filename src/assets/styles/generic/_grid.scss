@@ -1,0 +1,13 @@
+@use '../settings/grid' as *;
+@use '../tools/grid' as *;
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: $default-grid-gutter;
+  width: calc(100% + $default-grid-gutter);
+  margin: 0 calc($default-grid-gutter / 2 * -1);
+
+  @include generateGrid;
+  @include generateGridOffsets;
+}

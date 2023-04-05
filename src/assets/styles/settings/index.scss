@@ -1,0 +1,17 @@
+@forward './border-radius';
+@forward './border';
+@forward './breakpoints';
+@forward './colors';
+@forward './elevations';
+@forward './font-sizes';
+@forward './font-weights';
+@forward './fonts';
+@forward './line-heights';
+@forward './spacings';
+
+/*
+ *  Use this file to import the files corresponding to the settings folder.
+ *  This folder is used to store variables and configurations.
+ *  
+ *  E.g. @forward './colors';
+ */

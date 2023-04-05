@@ -1,0 +1,19 @@
+@use "../settings/breakpoints" as *;
+
+@mixin isMediaTablet($direction: min-width) {
+  @media all and ($direction: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin isMediaTabletLandscape($direction: min-width) {
+  @media all and ($direction: $breakpoint-tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin isMediaDesktop($direction: min-width) {
+  @media all and ($direction: $breakpoint-desktop) {
+    @content;
+  }
+}

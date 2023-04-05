@@ -1,0 +1,15 @@
+@mixin isRtl {
+  @at-root {
+    body[dir='rtl'] #{if(&, "&", "*")} {
+      @content;
+    }
+  }
+}
+
+@mixin isLtr {
+  @at-root {
+    body:not([dir='rtl']) #{if(&, "&", "*")} {
+      @content;
+    }
+  }
+}

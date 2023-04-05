@@ -1,0 +1,82 @@
+@use "sass:math" as math;
+@use "../tools/media" as *;
+@use "../tools/rtl" as *;
+@use "../settings/grid" as *;
+
+@mixin setGridCol($col) {
+  @if ($col > 0) {
+    $grid-width: percentage(math.div($col, $grid-columns));
+    flex-basis: calc($grid-width - $default-grid-gutter);
+    max-width: calc($grid-width - $default-grid-gutter);
+    margin: 0 calc($default-grid-gutter / 2);
+  } @else {
+    flex: 1;
+  }
+}
+
+@mixin setGridOffset($col) {
+  @if ($col > 0 and $col < $grid-columns) {
+    $offset-width: percentage(math.div($col, $grid-columns));
+    margin-left: calc(#{$offset-width} + calc(#{$default-grid-gutter}) / 2);
+
+    @include isRtl() {
+      margin-right: calc(#{$offset-width} + calc(#{$default-grid-gutter}) / 2);
+    }
+  }
+}
+
+@mixin generateGrid {
+  @for $i from 0 through $grid-columns {
+    @if ($i > 0) {
+      &__item--#{$i} {
+        @include setGridCol($col: $i);
+      }
+    } @else {
+      &__item {
+        @include setGridCol($col: $i);
+      }
+    }
+  }
+
+  @include isMediaTablet() {
+    @for $i from 0 through $grid-columns {
+      &__item--#{$i}-md {
+        @include setGridCol($col: $i);
+      }
+    }
+  }
+
+  @include isMediaDesktop() {
+    @for $i from 0 through $grid-columns {
+      &__item--#{$i}-lg {
+        @include setGridCol($col: $i);
+      }
+    }
+  }
+}
+
+@mixin generateGridOffsets {
+  @for $i from 0 through $grid-columns {
+    @if ($i > 0) {
+      &__offset--#{$i} {
+        @include setGridOffset($col: $i);
+      }
+    }
+  }
+
+  @include isMediaTablet() {
+    @for $i from 0 through $grid-columns {
+      &__offset--#{$i}-md {
+        @include setGridOffset($col: $i);
+      }
+    }
+  }
+
+  @include isMediaDesktop() {
+    @for $i from 0 through $grid-columns {
+      &__offset--#{$i}-lg {
+        @include setGridOffset($col: $i);
+      }
+    }
+  }
+}

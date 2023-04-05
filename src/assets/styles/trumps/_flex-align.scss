@@ -1,0 +1,7 @@
+@use '../tools/mixins' as *;
+
+$props-align: (('start', 'flex-start'), ('center', 'center'), ('end', 'flex-end'));
+
+.flex__align {
+  @include setProp('align-items', $props-align);
+}

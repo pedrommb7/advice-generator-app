@@ -1,0 +1,81 @@
+@use "../settings/spacings" as *;
+@use "../tools/rtl" as *;
+
+$gutterKeys: (("m", "margin"), ("p", "padding"));
+$gutters: (
+  ("0", $spacing-00),
+  ("4", $spacing-04),
+  ("8", $spacing-08),
+  ("12", $spacing-12),
+  ("16", $spacing-16),
+  ("20", $spacing-20),
+  ("24", $spacing-24),
+  ("28", $spacing-28),
+  ("32", $spacing-32),
+  ("40", $spacing-40),
+  ("48", $spacing-48),
+  ("56", $spacing-56),
+  ("64", $spacing-64)
+);
+$positions: (("t", "top"), ("b", "bottom"));
+$rtlPositions: (("r", "right"), ("l", "left"));
+
+@mixin setGutters($viewportSuffix: "") {
+  @if $viewportSuffix != "" {
+    $viewportSuffix: "-" + #{$viewportSuffix};
+  }
+
+  @each $size in $gutters {
+    $sizeKey: nth($size, 1);
+    $sizeValue: nth($size, 2);
+
+    @each $gutterKey in $gutterKeys {
+      $gutterKeyName: nth($gutterKey, 1);
+      $gutterKeyValue: nth($gutterKey, 2);
+
+      .#{$gutterKeyName}#{x}--#{$sizeKey}#{$viewportSuffix} {
+        #{$gutterKeyValue}-left: $sizeValue !important;
+        #{$gutterKeyValue}-right: $sizeValue !important;
+      }
+
+      .#{$gutterKeyName}#{y}--#{$sizeKey}#{$viewportSuffix} {
+        #{$gutterKeyValue}-top: $sizeValue !important;
+        #{$gutterKeyValue}-bottom: $sizeValue !important;
+      }
+
+      .#{$gutterKeyName}--#{$sizeKey}#{$viewportSuffix} {
+        #{$gutterKeyValue}: $sizeValue !important;
+      }
+
+      @each $position in $positions {
+        $posKey: nth($position, 1);
+        $posValue: nth($position, 2);
+
+        .#{$gutterKeyName}#{$posKey}--#{$sizeKey}#{$viewportSuffix} {
+          #{$gutterKeyValue}-#{$posValue}: $sizeValue !important;
+        }
+      }
+
+      @each $position in $rtlPositions {
+        $posKey: nth($position, 1);
+        $posValue: nth($position, 2);
+
+        .#{$gutterKeyName}#{$posKey}--#{$sizeKey}#{$viewportSuffix} {
+          @include isLtr() {
+            #{$gutterKeyValue}-#{$posValue}: $sizeValue !important;
+          }
+
+          @include isRtl() {
+            @if ($posValue == "left") {
+              #{$gutterKeyValue}-right: $sizeValue !important;
+            }
+
+            @if ($posValue == "right") {
+              #{$gutterKeyValue}-left: $sizeValue !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

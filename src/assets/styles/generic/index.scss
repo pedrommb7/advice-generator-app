@@ -1,0 +1,10 @@
+@forward './accessibility';
+@forward './body';
+@forward './grid';
+
+/*
+ *  Use this file to import the styling corresponding to the generic folder.
+ *  This folder is used for generic styling (animation, grid, etc.).
+ *  
+ *  E.g. @forward './animations';
+ */

@@ -1,0 +1,27 @@
+/*
+ *  This file should only be used if there are custom fonts to be imported
+ */
+
+@use '../settings/fonts' as *;
+
+@each $font-family in $font-list {
+  $font-name: nth($font-family, 1);
+  $font-filename: nth($font-family, 2);
+
+  /*
+   *  If you need to use more variables, you can add them as shown below and add the corresponding property (as shown on line 24)
+   *  
+   *  E.g. $font-weight: nth($font-family, 3);
+   */
+
+  @font-face {
+    font-family: $font-name;
+    src: url($font-path + $font-filename + '.woff') format('woff'),
+      url($font-path + $font-filename + '.woff2') format('woff2');
+    font-style: normal;
+
+    /*
+     *  E.g. font-weight: $font-weight;
+     */
+  }
+}

@@ -1,0 +1,7 @@
+@use '../common' as *;
+
+$props-flex: (('', 'flex'), ('inline', 'inline-flex'));
+
+.flex {
+  @include setProp('display', $props-flex);
+}

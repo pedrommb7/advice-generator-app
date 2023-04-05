@@ -1,0 +1,14 @@
+@use '../tools/mixins' as *;
+
+$props-justify: (
+  ('start', 'flex-start'),
+  ('center', 'center'),
+  ('end', 'flex-end'),
+  ('space-around', 'space-around'),
+  ('space-between', 'space-between'),
+  ('space-evenly', 'space-evenly')
+);
+
+.flex__justify {
+  @include setProp('justify-content', $props-justify);
+}

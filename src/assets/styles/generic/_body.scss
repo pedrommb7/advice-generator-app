@@ -1,0 +1,11 @@
+@use "../common" as *;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-family-spacegrotesk;
+  font-weight: $font-weight-medium;
+  margin: 0;
+}

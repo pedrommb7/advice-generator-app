@@ -1,0 +1,32 @@
+@use "../tools/media" as *;
+
+@mixin setPropMedia($prop, $values, $media: "") {
+  @if ($media != "") {
+    $media: "-" + #{$media};
+  }
+
+  @each $value in $values {
+    $valueClass: nth($value, 1);
+    $valueProp: nth($value, 2);
+
+    @if ($valueClass != "") {
+      $valueClass: "--" + #{$valueClass};
+    }
+
+    &#{$valueClass}#{$media} {
+      #{$prop}: #{$valueProp};
+    }
+  }
+}
+
+@mixin setProp($prop, $values) {
+  @include setPropMedia($prop, $values);
+
+  @include isMediaTablet() {
+    @include setPropMedia($prop, $values, "md");
+  }
+
+  @include isMediaDesktop() {
+    @include setPropMedia($prop, $values, "lg");
+  }
+}

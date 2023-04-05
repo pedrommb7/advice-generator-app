@@ -1,0 +1,18 @@
+@forward "./bgcolor";
+@forward "./border-radius";
+@forward "./color";
+@forward "./flex-align";
+@forward "./flex-direction";
+@forward "./flex-grow";
+@forward "./flex-justify";
+@forward "./flex-wrap";
+@forward "./flex";
+@forward "./gutters";
+@forward "./text-align";
+
+/*
+ *  Use this file to import the files corresponding to the trumps folder.
+ *  This folder is used for functional classes that should override component's styling.
+ *  
+ *  E.g. @forward './gutters';
+ */
