@@ -2,9 +2,9 @@ import React, { FC } from "react";
 import { ButtonProps } from "./types";
 
 const Button: FC<ButtonProps> = ({
-  text,
   className,
   onClick,
+  children,
   type,
   disabled,
 }) => {
@@ -15,7 +15,7 @@ const Button: FC<ButtonProps> = ({
       type={type}
       disabled={disabled}
     >
-      {text}
+      {children}
     </button>
   );
 };

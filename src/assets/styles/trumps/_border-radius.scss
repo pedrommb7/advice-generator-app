@@ -5,11 +5,19 @@
     border-radius: $border-radius-08;
   }
 
+  &--12 {
+    border-radius: $border-radius-12;
+  }
+
   &--15 {
     border-radius: $border-radius-15;
   }
 
   &--25 {
     border-radius: $border-radius-25;
+  }
+
+  &--40 {
+    border-radius: $border-radius-40;
   }
 }

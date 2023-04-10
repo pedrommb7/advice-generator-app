@@ -1,7 +1,6 @@
 import React from "react";
 import Figure from "./components/molecules/Figure/Figure";
 import "./App.scss";
-import "./assets/styles/trumps/_index.scss";
 
 function App() {
   return (

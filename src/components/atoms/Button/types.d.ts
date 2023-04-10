@@ -1,7 +1,7 @@
 export interface ButtonProps {
     className?: string;
-    text: string | number;
+    children?: JSX.Element | string | number;
     onClick?: MouseEventHandler<HTMLButtonElement>;
-    type?: 'submit' | 'reset' | 'button';
+    type?: 'submit' | 'button';
     disabled?: boolean;
 }

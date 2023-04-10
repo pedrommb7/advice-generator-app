@@ -1,0 +1,25 @@
+@use "../../../assets/styles/common" as *;
+
+figure {
+  position: relative;
+  text-align: center;
+  background-color: $color-neutral-darkgrayishblue;
+  top: 25%;
+
+  margin: 0 1rem;
+
+  @include isMediaTabletLandscape() {
+    margin: 0 32rem;
+  }
+
+  p {
+    color: $color-primary-neongreen;
+    margin: 0;
+    letter-spacing: 3px;
+  }
+
+  h1 {
+    color: $color-primary-lightcyan;
+    font-weight: $font-weight-extrabold;
+  }
+}

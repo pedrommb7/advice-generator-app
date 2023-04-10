@@ -1,62 +1,29 @@
 @use "assets/styles/common" as *;
 @use "assets/styles/main.scss" as *;
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
-
-$font-family-manrope: "Manrope", sans-serif;
-$font-weight-extrabold: 800;
-
-/* ----- Primary Colors ----- */
-$color-primary-lightcyan: hsl(193, 38%, 86%);
-$color-primary-neongreen: hsl(150, 100%, 66%);
-$color-primary-black: black;
-
-/* ----- Neutral Colors ----- */
-$color-neutral-grayishblue: hsl(217, 19%, 38%);
-$color-neutral-darkgrayishblue: hsl(217, 19%, 24%);
-$color-neutral-darkblue: hsl(218, 23%, 16%);
-
-$border-radius-11: 0.688rem; //11px
-$border-radius-40: 2.5rem; //40px
 
 .advicegenerator {
   background-color: $color-neutral-darkblue;
-  font-family: $font-family-manrope;
   height: 100vh;
   text-align: center;
-  margin: 0;
 
   &__patternDividerMobile {
     width: 100%;
-    margin-bottom: 4rem;
+  }
+
+  &__patternDividerDesktop {
+    margin-top: 2.5rem !important;
+    margin-bottom: 4.5rem !important;
   }
 
   &__iconDice {
     position: absolute;
     left: 40%;
     background-color: $color-primary-neongreen;
-    padding: 1.4rem;
-    border-radius: $border-radius-40;
-    top: 91%;
-  }
+    top: 90%;
 
-  figure {
-    position: relative;
-    margin: 0 1rem;
-    text-align: center;
-    background-color: $color-neutral-darkgrayishblue;
-    border-radius: $border-radius-11;
-    top: 25%;
-
-    p {
-      color: $color-primary-neongreen;
-      margin: 0;
-      letter-spacing: 3px;
-      padding-top: 2.5rem;
-    }
-
-    h1 {
-      color: $color-primary-lightcyan;
-      font-weight: $font-weight-extrabold;
+    @include isMediaTabletLandscape() {
+      left: 45%;
+      top: 89%;
     }
   }
 }
