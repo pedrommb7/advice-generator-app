@@ -26,4 +26,15 @@
       top: 89%;
     }
   }
+
+  &__footer {
+    position: absolute;
+    bottom: 2%;
+    color: $color-primary-lightcyan;
+
+    a:nth-of-type(2):hover {
+      color: $color-primary-neongreen;
+      transition: all 0.5s ease-in-out;
+    }
+  }
 }
