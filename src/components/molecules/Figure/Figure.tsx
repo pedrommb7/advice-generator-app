@@ -42,7 +42,7 @@ const Figure = () => {
 
   return (
     <figure className="mt--0 border-radius--12 flex flex--column flex__align--center">
-      <Paragraph text={`Advice #${adviceID}`} className="pt--40" />
+      <Paragraph text={`Advice #${adviceID}`} className="pt--40 m--0" />
       <blockquote>
         <Heading type={"h1"} text={`"${advice}"`} />
         <Svg

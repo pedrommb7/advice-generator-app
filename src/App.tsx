@@ -4,7 +4,7 @@ import "./App.scss";
 
 function App() {
   return (
-    <main className="App advicegenerator">
+    <main className="App advicegenerator flex flex--column flex__align--center">
       <Figure />
     </main>
   );
