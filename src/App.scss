@@ -19,10 +19,10 @@
     position: absolute;
     left: 40%;
     background-color: $color-primary-neongreen;
-    top: 90%;
+    top: 91%;
 
     @include isMediaTabletLandscape() {
-      left: 45%;
+      left: 44%;
       top: 89%;
     }
   }

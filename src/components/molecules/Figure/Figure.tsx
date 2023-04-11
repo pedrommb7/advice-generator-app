@@ -11,12 +11,15 @@ import Svg from "../../atoms/Svg/Svg";
 import Button from "../../atoms/Button/Button";
 
 const Figure = () => {
-  const [advice, setAdvice] = useState(String);
-  const [adviceID, setAdviceID] = useState(Number);
+  const [advice, setAdvice] = useState<string>("");
+  const [adviceID, setAdviceID] = useState<number>(0);
   const [isDesktop, setIsDesktop] = useState(false);
 
+  const API_URL = "https://api.adviceslip.com/advice";
+  const mediaQueryDesktop = "(min-width: 1024px)";
+
   useEffect(() => {
-    fetch("https://api.adviceslip.com/advice")
+    fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
         setAdvice(data.slip.advice);
@@ -24,7 +27,7 @@ const Figure = () => {
       })
       .catch((error) => console.error(error));
 
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const mediaQuery = window.matchMedia(mediaQueryDesktop);
     setIsDesktop(mediaQuery.matches);
     const handleChange = (event: MediaQueryListEvent) => {
       setIsDesktop(event.matches);
@@ -38,7 +41,7 @@ const Figure = () => {
   }, []);
 
   return (
-    <figure className="mt--0 border-radius--12">
+    <figure className="mt--0 border-radius--12 flex flex--column flex__align--center">
       <Paragraph text={`Advice #${adviceID}`} className="pt--40" />
       <blockquote>
         <Heading type={"h1"} text={`"${advice}"`} />
