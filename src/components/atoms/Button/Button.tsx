@@ -7,6 +7,7 @@ const Button: FC<ButtonProps> = ({
   children,
   type,
   disabled,
+  ariaLabel,
 }) => {
   return (
     <button
@@ -14,6 +15,7 @@ const Button: FC<ButtonProps> = ({
       onClick={onClick}
       type={type}
       disabled={disabled}
+      aria-label={ariaLabel}
     >
       {children}
     </button>

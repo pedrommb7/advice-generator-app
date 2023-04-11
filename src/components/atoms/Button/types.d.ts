@@ -4,4 +4,5 @@ export interface ButtonProps {
     onClick?: MouseEventHandler<HTMLButtonElement>;
     type?: 'submit' | 'button';
     disabled?: boolean;
+    ariaLabel?: string;
 }

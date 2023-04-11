@@ -41,7 +41,10 @@ const Figure = () => {
   }, []);
 
   return (
-    <figure className="mt--0 border-radius--12 flex flex--column flex__align--center">
+    <figure
+      className="mt--0 border-radius--12 flex flex--column flex__align--center"
+      aria-label="Advice section"
+    >
       <Paragraph text={`Advice #${adviceID}`} className="pt--40 m--0" />
       <blockquote>
         <Heading type={"h1"} text={`"${advice}"`} />
@@ -58,6 +61,7 @@ const Figure = () => {
       <Button
         className="advicegenerator__iconDice p--20 border-radius--40"
         onClick={() => window.location.reload()}
+        ariaLabel="Generate new quote"
       >
         <Svg icon={iconDice} />
       </Button>
