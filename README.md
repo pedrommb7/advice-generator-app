@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/pedrommb7/advice-generator-app](https://github.com/pedrommb7/advice-generator-app)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://fmadvicegenerator.netlify.app/](https://fmadvicegenerator.netlify.app/)
 
 ## My process
 
