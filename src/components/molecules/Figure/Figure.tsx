@@ -53,7 +53,7 @@ const Figure = () => {
             isDesktop
               ? "advicegenerator__patternDividerDesktop"
               : "advicegenerator__patternDividerMobile"
-          } mb--56 mt--24`}
+          } mb--48 mt--24`}
           icon={isDesktop ? patternDividerDesktop : patternDividerMobile}
         />
       </blockquote>
